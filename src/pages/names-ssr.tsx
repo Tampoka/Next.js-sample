@@ -1,11 +1,6 @@
 import type { GetServerSideProps, InferGetServerSidePropsType, NextPage } from "next";
 import { fetchNames } from "../utils/fetch-names";
 
-type responseItemType={
-    id:string;
-    name:string;
-}
-
 const NameSSR:NextPage=(props:InferGetServerSidePropsType<typeof getServerSideProps>)=>{
  const output=props.names.map((item:responseItemType, idx:number)=>(<li key={idx}>{item.name} (ID: {item.id})</li>))
  return (

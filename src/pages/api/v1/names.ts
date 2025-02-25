@@ -1,10 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
-type responseItemType={
-    id:string
-    name: string;
-}
-
 export default async function handler(_req: NextApiRequest, res: NextApiResponse):Promise<void | NextApiResponse<responseItemType[]>> {
     const url="https://usemodernfullstack.dev/api/v1/users";
     let data

@@ -1,13 +1,8 @@
 import { fetchNames } from "@/utils/fetch-names";
 import {  useEffect, useState } from "react"
 
-type ResponseItemType = {
-    id: string;
-    name: string;
-};
-
 const NamesCSR = () => {
-    const [data, setData] = useState<ResponseItemType[]|[]>();
+    const [data, setData] = useState<responseItemType[]|[]>();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -24,7 +19,7 @@ const NamesCSR = () => {
         fetchData();
     })
 
-    const output=data?.map((item:ResponseItemType, idx:number)=>(<li key={idx}>{item.name} (ID: {item.id})</li>))
+    const output=data?.map((item:responseItemType, idx:number)=>(<li key={idx}>{item.name} (ID: {item.id})</li>))
     return (
         <div className="px-6">
             <h1>Names List</h1>

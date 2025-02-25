@@ -1,12 +1,7 @@
 import { useEffect, useState } from 'react';
 
-type ResponseItemType = {
-  id: string;
-  name: string;
-};
-
 const NamesPage = () => {
-  const [names, setNames] = useState<ResponseItemType[]>([]);
+  const [names, setNames] = useState<responseItemType[]>([]);
   const [error, setError] = useState<string | null>(null);
 
   // Fetch the names when the component mounts
@@ -17,7 +12,7 @@ const NamesPage = () => {
         if (!response.ok) {
           throw new Error('Failed to fetch names');
         }
-        const data: ResponseItemType[] = await response.json();
+        const data: responseItemType[] = await response.json();
         setNames(data);
       } catch (error: unknown) {
         if (error instanceof Error) {

@@ -1,11 +1,6 @@
 import type { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
 import { fetchNames } from "../utils/fetch-names";
 
-type responseItemType = {
-    id: string;
-    name: string;
-    };
-
     const NamesSSG:NextPage=(props:InferGetStaticPropsType<typeof getStaticProps>)=>{
     const output=props.names.map((item:responseItemType, idx:number)=>(<li key={idx}>{item.name} (ID: {item.id})</li>))
     return (
