@@ -10,7 +10,7 @@ declare interface WeatherInterface {
 
 export const resolvers = {
   Query: {
-    weather: async (_: any, param: WeatherInterface) => {
+    weather: async (_: never, param: WeatherInterface) => {
       return [db.find((item) => item.zip === param.zip)];
     },
   },
